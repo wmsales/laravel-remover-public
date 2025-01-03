@@ -37,3 +37,15 @@ if ($uri !== '/' && file_exists(__DIR__.'/public'.$uri)) {
 require_once __DIR__.'/public/index.php';
 
 ```
+
+
+##Para aplicar estilos (si no puedes usar npm run build en tu servidor)
+Debes colocar dentro de public un .htaccess con esto:
+```
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>
+```
