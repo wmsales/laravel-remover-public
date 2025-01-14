@@ -22,6 +22,7 @@ Solución para remover de la URL public/ para acceder a proyecto en producción
 ## Crear archivo server.php en la raiz del sitio
 
 ```
+<?php
 
 $uri = urldecode(
     parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
@@ -39,7 +40,7 @@ require_once __DIR__.'/public/index.php';
 ```
 
 
-##Para aplicar estilos (si no puedes usar npm run build en tu servidor)
+##Para aplicar estilos (si no puedes usar npm run build en tu servidor) (es opcional configuracion actual permite usarlo sin problema)
 Debes colocar dentro de public un .htaccess con esto:
 ```
 <IfModule mod_rewrite.c>
